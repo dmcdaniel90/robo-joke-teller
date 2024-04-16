@@ -1,0 +1,11 @@
+{
+  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "target": "ES6"
+  },
+  "exclude": [
+    "node_modules",
+    "src/script.js",
+    "dist"
+  ],
+}

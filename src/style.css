@@ -1,0 +1,307 @@
+/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+:root {
+  --primary: #F53582;
+  --secondary: #0F6E8A;
+  --background: #45badd;
+
+}
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('./images/robot.gif');
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  height: 50px;
+  font-size: 1.25rem;
+  color: var(--primary);
+  background: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  filter: brightness(95%);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+
+.controls {
+  width: 393px;
+  height: auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  background-color: var(--primary);
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.controls-title {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border: none;
+}
+
+.controls-settings {
+  padding: .5rem .5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: var(--secondary);
+}
+
+.settings-nsfw {
+  display: flex;
+  width: 116px;
+  overflow: hidden;
+  padding: 8px 4px;
+  border-radius: 6px;
+  background: #FFF;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.settings-nsfw__label {
+  align-self: stretch;
+  color: var(--primary);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: -0.16px;
+  text-align: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.settings-nsfw__subtitle {
+  align-self: stretch;
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: -0.16px;
+  text-align: center;
+}
+
+.settings-categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: 0.5rem;
+  align-self: stretch;
+  flex: 1 0 0;
+}
+
+.settings-categories__label {
+  display: flex;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1rem;
+  letter-spacing: -0.14px;
+}
+
+.settings-categories__inputgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.settings-categories__inputgroup label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: -0.16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Hide the default checkbox */
+.settings-categories__inputgroup label input {
+  width: 0px;
+  height: 0px;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+label input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+/* Style the checkmark/indicator */
+.checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: -0.16px;
+  text-align: center;
+}
+
+/* Media Query: Tablet or Smaller */
+@media screen and (max-width: 768px) {
+  .container {
+    background: none;
+  }
+
+  .controls {
+    width: clamp(250px, 80%, 350px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
