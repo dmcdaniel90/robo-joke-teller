@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "source": "./src/index.html",
+  "source": "src/index.html",
   "homepage": "https://dmcdaniel90.github.io/robo-joke-teller",
   "scripts": {
     "dev": "parcel src/index.html --open",
     "check": "tsc --noEmit",
-    "build": "parcel build ./src/index.html --public-url ./ ",
-    "predeploy": "rm -rf dist && npm run build",
+    "build": "parcel build --public-url ./ ",
+    "predeploy": "rm -rf dist && rm -rf .parcel-cache && npm run build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
