@@ -4,7 +4,7 @@
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "./src/index.html",
-  "homepage": "https://dmcdaniel90.github.io/robo-joke-teller",
+  "homepage": "https://dmcdaniel90.github.io/joke-teller",
   "scripts": {
     "dev": "parcel src/index.html --open",
     "check": "tsc --noEmit",
