@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "parcel src/index.html --open",
     "check": "tsc --noEmit",
-    "build": "parcel build ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./ ",
+    "predeploy": "rm -rf dist && npm run build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
