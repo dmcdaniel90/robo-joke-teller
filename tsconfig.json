@@ -1,11 +1,14 @@
 {
   "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "target": "ES6"
+    "target": "ES6",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "noImplicitAny": true,
   },
   "exclude": [
     "node_modules",
-    "src/script.js",
+    "src/script.ts",
     "dist"
   ],
 }
