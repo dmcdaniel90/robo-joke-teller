@@ -102,7 +102,6 @@ function getUserCategories(): void {
 }
 
 function isButtonDisabled(disabled: boolean): void {
-  
   if (playButton) {
     (playButton as HTMLButtonElement).disabled = disabled;
   }
