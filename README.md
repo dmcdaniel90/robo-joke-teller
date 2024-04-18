@@ -8,7 +8,9 @@ This project, named "Joke Teller", is a fun and interactive web application that
 
 **Note**: The application uses the JokeAPI to fetch jokes. The free version of the API has a limit of 50 requests per day. If the limit is reached, the application will display a message to the user.
 
-**Warning** The JokeAPI includes adult content. The application, by default, filters out jokes that are flagged as explicit, but the user can choose to display them by toggling the "NSFW Mode" button. I am not responsible for any inappropriate content that may be presented or any offense caused.
+**Note**: The application uses the VoiceRSS API to convert the joke text to speech. I have provided my own API key in the code, but you can sign up for your own free API key at [VoiceRSS](http://www.voicerss.org/). The free version of the API has a limit of 350 requests per day. To use your own API key, simply replace the value of the `apiKey` variable in the `script.ts` file with your own key.
+
+**Warning**: The JokeAPI includes adult content. The application, by default, filters out jokes that are flagged as explicit, but the user can choose to display them by toggling the "NSFW Mode" button. I am not responsible for any inappropriate content that may be presented or any offense caused.
 
 ## Technology Stack
 

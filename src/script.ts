@@ -30,6 +30,9 @@ const nsfwModeButton: HTMLElement | null = document.getElementById('nsfw-dark');
 const customCheckboxes: Element[] = Array.from(document.getElementsByClassName('checkbox-container'))
 const selectAllCheckbox: HTMLElement | null = document.getElementById('all-checkbox');
 
+//* API Key
+const apiKey = 'f83cf3c984414c67b2a8240b169e56c2'; // Replace with your own API key
+
 //* User Settings
 let userCategories: string[] = []; 
 let nsfwMode = false;
@@ -65,7 +68,7 @@ async function getJoke(): Promise<void> {
 // Passing joke string to VoiceRSS TTS as src parameter and audioElement for playing audio
 function playAudio(userString: string) {
       VoiceRSS.speech({
-      key: 'f83cf3c984414c67b2a8240b169e56c2',
+      key: apiKey,
       src: userString,
       hl: "en-us",
       r: "0",
