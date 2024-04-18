@@ -101,8 +101,19 @@ function getUserCategories(): void {
   userCategories.join(',');
 }
 
+function isButtonDisabled(disabled: boolean): void {
+  
+  if (playButton) {
+    (playButton as HTMLButtonElement).disabled = disabled;
+  }
+}
+
 // Event listeners
 playButton?.addEventListener('click', getJoke);
+// Disable button on audio play
+audioElement?.addEventListener('play', () => isButtonDisabled(true));
+// Enable button on audio end
+audioElement?.addEventListener('ended', () => isButtonDisabled(false));
 
 // Toggle nsfw mode
 nsfwSwitch?.addEventListener('change', () => {
